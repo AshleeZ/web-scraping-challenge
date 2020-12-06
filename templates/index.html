@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Webpage name -->
+  <title>Mars Information</title>
+  <!-- Link stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='css/styles.css') }}">
+</head>
+
+<body>
+  <!-- Set up Jumbotron section -->
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <!-- Set up botton for scraping/updating data -->
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+  </div>
+  <!-- Set up Mars News section -->
+  <div class="container" id="mars_info">
+    <div class="col-lg-12">
+      <h2>Latest Mars News</h2>
+        <!-- Populate from scraped data in database -->
+        <h4>{{ mars_data.news_title }}</h4>
+        <p>{{ mars_data.news_p }}</p>
+    </div>    
+  </div>
+  <div class="container" id="mars_info">
+    <!-- Set up Featured Mars Image section -->
+    <div class="col-lg-8">
+      <h2>Featured Mars Image</h2>
+      <!-- Populate with image from scraped url -->
+      <img src="{{ mars_data.featured_image_url }}" alt="featured_image" id="featured_image">
+    </div>
+    <!-- Set up Mars Facts section -->
+    <div class="col-lg-4">
+      <h4>Mars Facts</h4>
+      <div class="table">
+        <table class="table table-striped" style="border: 2px solid black !important;">
+          <thead>
+            <tr>
+              <th></th>
+              <th style="border-left: 2px solid black !important;">Mars</th>
+            </tr>
+            <tr>
+              <th>Description</th>
+              <th style="border-left: 2px solid black !important;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Loop through dictionary in database and populate table -->
+            {% for i in  mars_data.table  %}
+            <tr>
+              <th>{{ i.Description }}</th>
+              <td style="border-left: 2px solid black !important;">{{ i.Mars }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Set up Mars Hemispheres section -->
+  <div class="container" id="hemispheres">
+    <h2>Mars Hemishpheres</h2>
+    <hr>
+    <div class="row">
+      <div class="col-lg-5 col-center text-box">
+        <img src="{{ mars_data.hemisphere_image_urls.0.img_url }}" alt="hemisphere1">
+        <p>Cerberus Hemisphere</p>
+      </div>
+      <div class="col-lg-5 col-center text-box">
+        <img src="{{ mars_data.hemisphere_image_urls.1.img_url }}" alt="hemisphere2">
+        <p>Schiaparelli Hemisphere</p>
+      </div>
+      <div class="col-lg-5 col-center text-box">
+        <img src="{{ mars_data.hemisphere_image_urls.2.img_url }}" alt="hemisphere3">
+        <p>Syrtis Major Hemisphere</p>
+      </div>
+      <div class="col-lg-5 col-center text-box">
+        <img src="{{ mars_data.hemisphere_image_urls.3.img_url }}" alt="hemisphere4">
+        <p>Valles Marineris Hemisphere</p>
+      </div>            
+    </div>
+  </div>
+</body>
+
+</html>

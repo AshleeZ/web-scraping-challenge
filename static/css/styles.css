@@ -1,0 +1,66 @@
+/* Scale size for featured image */
+#featured_image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Bold font for header */
+h2 {
+    font-weight: bold;
+}
+
+/* Bold font for header */
+h4 {
+    font-weight: bold;
+}
+
+/* Padding between columns */
+.col-lg-8 {
+    padding-bottom: 15px;
+}
+
+/* Text alignment for header */
+#hemispheres {
+    text-align: center;
+    align-items: center;
+}
+
+/* Border, padding and margin for hemisphere columns */
+.col-lg-5 {
+    padding: 3px;
+    border: 2px solid rgb(209, 209, 209);
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+/* Image size scaling for hemisphere images */
+.col-lg-5 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Margin, font size, and text alignment for hemishpere image labels */
+.col-lg-5 p {
+    margin: 10px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Center alignment for hemisphere images */
+.col-center {
+    display:inline-block;
+    float:none;
+}
+
+/* Alignment for first 2 rows */
+#mars_info {
+    display: contents inline-block;
+}
+
+/* Margins for text-boxes in hemishpere section */
+.text-box {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
