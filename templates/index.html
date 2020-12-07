@@ -71,19 +71,27 @@
     <hr>
     <div class="row">
       <div class="col-lg-5 col-center text-box">
+        {% if mars_data.hemisphere_image_urls %}
         <img src="{{ mars_data.hemisphere_image_urls.0.img_url }}" alt="hemisphere1">
+        {% endif %}
         <p>Cerberus Hemisphere</p>
       </div>
       <div class="col-lg-5 col-center text-box">
+        {% if mars_data.hemisphere_image_urls %}
         <img src="{{ mars_data.hemisphere_image_urls.1.img_url }}" alt="hemisphere2">
+        {% endif %}
         <p>Schiaparelli Hemisphere</p>
       </div>
       <div class="col-lg-5 col-center text-box">
+        {% if mars_data.hemisphere_image_urls %}
         <img src="{{ mars_data.hemisphere_image_urls.2.img_url }}" alt="hemisphere3">
+        {% endif %}
         <p>Syrtis Major Hemisphere</p>
       </div>
       <div class="col-lg-5 col-center text-box">
+        {% if mars_data.hemisphere_image_urls %}
         <img src="{{ mars_data.hemisphere_image_urls.3.img_url }}" alt="hemisphere4">
+        {% endif %}
         <p>Valles Marineris Hemisphere</p>
       </div>            
     </div>
